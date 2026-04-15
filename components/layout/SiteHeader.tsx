@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { FiMoon, FiSun, FiX } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { FiSun, FiX } from "react-icons/fi";
 
 const leftNavItems = [
   { label: "Revista", href: "/" },
@@ -68,13 +68,14 @@ export default function SiteHeader() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
 
-    setTheme(nextTheme);
-    window.localStorage.setItem("theme", nextTheme);
-    document.documentElement.dataset.theme = nextTheme;
-    document.documentElement.style.colorScheme = nextTheme;
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
   };
 
   const closeMenu = () => {
@@ -106,14 +107,10 @@ export default function SiteHeader() {
             <button
               type="button"
               className="font-ui inline-flex h-9 items-center justify-center gap-1 rounded-full border border-soft bg-[var(--surface)] px-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--foreground-muted)] transition-colors hover:border-[var(--accent-petroleum)] hover:text-[var(--foreground)]"
-              aria-label={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+              aria-label="Cambiar tema"
               onClick={toggleTheme}
             >
-              {theme === "dark" ? (
-                <FiSun className="h-3.5 w-3.5" aria-hidden="true" />
-              ) : (
-                <FiMoon className="h-3.5 w-3.5" aria-hidden="true" />
-              )}
+              <FiSun className="h-3.5 w-3.5" aria-hidden="true" />
             </button>
           </nav>
 
@@ -121,14 +118,10 @@ export default function SiteHeader() {
             <button
               type="button"
               className="font-ui inline-flex h-9 items-center justify-center gap-1 rounded-full border border-soft bg-[var(--surface)] px-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--foreground-muted)] transition-colors hover:border-[var(--accent-petroleum)] hover:text-[var(--foreground)]"
-              aria-label={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+              aria-label="Cambiar tema"
               onClick={toggleTheme}
             >
-              {theme === "dark" ? (
-                <FiSun className="h-3.5 w-3.5" aria-hidden="true" />
-              ) : (
-                <FiMoon className="h-3.5 w-3.5" aria-hidden="true" />
-              )}
+              <FiSun className="h-3.5 w-3.5" aria-hidden="true" />
             </button>
             <button
               type="button"

@@ -35,27 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${displayFont.variable} ${uiFont.variable} ${bodyFont.variable} h-full antialiased`}>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (() => {
-                try {
-                  const storedTheme = window.localStorage.getItem('theme');
-                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  const theme = storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : prefersDark ? 'dark' : 'light';
-                  document.documentElement.dataset.theme = theme;
-                  document.documentElement.style.colorScheme = theme;
-                } catch (error) {
-                  document.documentElement.dataset.theme = 'light';
-                  document.documentElement.style.colorScheme = 'light';
-                }
-              })();
-            `,
-          }}
-        />
-      </head>
+    <html
+      lang="es"
+      data-theme="light"
+      style={{ colorScheme: "light" }}
+      className={`${displayFont.variable} ${uiFont.variable} ${bodyFont.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
         <SiteHeader />
         <main className="flex-1">{children}</main>
