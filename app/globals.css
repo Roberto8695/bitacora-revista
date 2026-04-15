@@ -1,37 +1,102 @@
-@import "@fontsource/montserrat/400.css";
-@import "@fontsource/montserrat/500.css";
-@import "@fontsource/montserrat/600.css";
-@import "@fontsource/montserrat/700.css";
-@import "@fontsource/montserrat/800.css";
 @import "tailwindcss";
 
 :root {
-  --font-montserrat: "Montserrat";
-  --color-50: #f1f0f4;
-  --color-100: #d7d6e1;
-  --color-200: #bdbbce;
-  --color-300: #a3a0ba;
-  --color-400: #8986a7;
-  --color-500: #6f6b94;
-  --color-600: #5b5879;
-  --color-700: #434159;
-  --color-800: #333144;
-  --color-900: #1f1e29;
-  --color-950: #0b0b0f;
+  --background: #faf8f4;
+  --surface: #f7f3ec;
+  --foreground: #1b1b1b;
+  --foreground-muted: #5f5a54;
+  --accent-wine: #7a2e2e;
+  --accent-petroleum: #1f3a42;
+  --border-soft: #d8d1c7;
+  --nav-link: #5f5a54;
+  --nav-link-hover: #1f3a42;
+  --nav-link-icon: #7a746d;
+  --shadow-soft: 31 58 66;
+}
 
-  --background: var(--color-50);
-  --foreground: var(--color-900);
+html[data-theme="dark"] {
+  --background: #14110f;
+  --surface: #1b1715;
+  --foreground: #f7f3ec;
+  --foreground-muted: #d1c8bd;
+  --accent-wine: #c06a5c;
+  --accent-petroleum: #7ba1a9;
+  --border-soft: #3a332c;
+  --nav-link: #d1c8bd;
+  --nav-link-hover: #f7f3ec;
+  --nav-link-icon: #9f9487;
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-montserrat);
+  --font-sans: var(--font-ui);
+  --font-serif: var(--font-body);
 }
 
 body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent-wine);
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  color: var(--foreground);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+button,
+nav,
+header,
+footer,
+input,
+select,
+textarea,
+label,
+small,
+figcaption,
+time,
+.font-ui {
+  font-family: var(--font-ui), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+}
+
+.font-body {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
+}
+
+.text-secondary {
+  color: var(--foreground-muted);
+}
+
+.border-soft {
+  border-color: var(--border-soft);
+}
+
+#bita{
+  color: white;;
 }

@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: configDir,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

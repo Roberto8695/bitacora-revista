@@ -1,107 +1,163 @@
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+} from "react-icons/fa";
 
-const leftLinks = [
-  { label: "Revista", href: "#" },
-  { label: "Archivo", href: "#" },
-  { label: "Suscripciones", href: "#" },
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+const footerSections: FooterSection[] = [
+  {
+    title: "Revista",
+    links: [
+      { label: "Archivo", href: "/archivo" },
+      { label: "Ediciones", href: "/ediciones" },
+      { label: "Suscripciones", href: "/suscripciones" },
+    ],
+  },
+  {
+    title: "Soporte",
+    links: [
+      { label: "Publicidad", href: "/publicidad" },
+      { label: "Directorio", href: "/directorio" },
+      { label: "Contacto", href: "/contacto" },
+    ],
+  },
 ];
 
-const rightLinks = [
-  { label: "Soporte", href: "#" },
-  { label: "Publicidad", href: "#" },
-  { label: "Directorio", href: "#" },
+interface SocialLink {
+  icon: React.ReactNode;
+  href: string;
+  label: string;
+}
+
+const socialLinks: SocialLink[] = [
+  {
+    icon: <FaTwitter className="w-4 h-4" />,
+    href: "https://twitter.com/bitacorabo",
+    label: "Twitter",
+  },
+  {
+    icon: <FaFacebookF className="w-4 h-4" />,
+    href: "https://facebook.com/bitacorabo",
+    label: "Facebook",
+  },
+  {
+    icon: <FaInstagram className="w-4 h-4" />,
+    href: "https://instagram.com/bitacorabo",
+    label: "Instagram",
+  },
+  {
+    icon: <FaYoutube className="w-4 h-4" />,
+    href: "https://youtube.com/bitacorabo",
+    label: "YouTube",
+  },
 ];
 
-const socialLinks = [
-  { label: "Twitter", href: "#", icon: FaTwitter },
-  { label: "Facebook", href: "#", icon: FaFacebookF },
-  { label: "Instagram", href: "#", icon: FaInstagram },
-  { label: "YouTube", href: "#", icon: FaYoutube },
+interface FooterLegalLink {
+  label: string;
+  href: string;
+}
+
+const legalLinks: FooterLegalLink[] = [
+  { label: "Términos de uso", href: "/terminos" },
+  { label: "Política de privacidad", href: "/privacidad" },
 ];
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-20 bg-[var(--color-950)] text-[var(--color-100)]">
-      <div className="mx-auto max-w-[1600px] px-6 pb-16 pt-12 md:px-10 lg:px-16">
-        <div className="flex justify-center">
-          <Link
-            href="#"
-            className="text-5xl font-extrabold uppercase tracking-tight text-white transition-opacity hover:opacity-90 md:text-7xl"
-            aria-label="Ir al inicio de Bitacora"
-          >
-            BITACORA
-          </Link>
-        </div>
+    <footer className="bg-[#1f3a42] text-[#e8e3db] border-t border-[#2d5566]">
+      {/* Main footer content */}
+      <div className="mx-auto max-w-[1400px] px-4 md:px-6 lg:px-8 py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12">
+          {/* Left column: Bitácora branding and description */}
+          <div className="md:col-span-4">
+            <h3 id="bita" className="font-display text-2xl md:text-3xl mb-4 text-[#f7f3ec]">
+              Bitácora
+            </h3>
+            <p className="font-body text-sm md:text-base leading-relaxed text-[#b8afa8] max-w-sm">
+              Revista digital boliviana dedicada al análisis del pensamiento
+              público, la política, la cultura y el conflicto. Contribuyendo a
+              la reflexión crítica sobre nuestra época.
+            </p>
+          </div>
 
-        <div className="mt-10 border-t border-[var(--color-700)]/50 pt-10">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr_0.9fr] lg:gap-14">
-            <div>
-              <p className="max-w-xl text-[15px] leading-9 text-[var(--color-200)]">
-                BITACORA es un espacio abierto al conocimiento, la critica y la cultura. Documentamos ideas, historias y conversaciones con mirada contemporanea para conectar pasado, presente y futuro.
-              </p>
-            </div>
+          {/* Middle columns: Navigation sections */}
+          <div className="md:col-span-5 grid grid-cols-2 gap-8">
+            {footerSections.map((section) => (
+              <nav key={section.title}>
+                <p className="font-ui font-semibold uppercase tracking-widest text-xs text-[#f7f3ec] mb-4">
+                  {section.title}
+                </p>
+                <ul className="space-y-2">
+                  {section.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="font-ui text-sm text-[#b8afa8] hover:text-[#f7f3ec] transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
 
-            <div>
-              <ul className="space-y-4 text-2xl leading-none text-[var(--color-100)] md:text-[30px]">
-                {leftLinks.map((item) => (
-                  <li key={item.label}>
-                    <Link href={item.href} className="transition-colors hover:text-white">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <ul className="space-y-4 text-2xl leading-none text-[var(--color-100)] md:text-[30px]">
-                {rightLinks.map((item) => (
-                  <li key={item.label}>
-                    <Link href={item.href} className="transition-colors hover:text-white">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="mb-5 text-3xl font-medium tracking-tight text-white md:text-4xl">Redes sociales</h3>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      aria-label={item.label}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-700)] text-[var(--color-100)] transition-colors hover:border-[var(--color-300)] hover:text-white"
-                    >
-                      <Icon className="h-5 w-5" aria-hidden="true" />
-                    </Link>
-                  );
-                })}
-              </div>
+          {/* Right column: Social links */}
+          <div className="md:col-span-3">
+            <p className="font-ui font-semibold uppercase tracking-widest text-xs text-[#f7f3ec] mb-4">
+              Síguenos
+            </p>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-[#2d5566] flex items-center justify-center text-[#b8afa8] hover:text-[#f7f3ec] hover:border-[#f7f3ec] transition-colors duration-200"
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-14 text-center text-sm leading-7 text-[var(--color-300)]">
-          <p>© 2026. Todos los derechos reservados BITACORA, sociedad, ciencia y literatura.</p>
-          <p className="mt-1">
-            <Link href="#" className="underline decoration-[var(--color-500)] underline-offset-4 hover:text-white">
-              Terminos de uso
-            </Link>
-            {" | "}
-            <Link href="#" className="underline decoration-[var(--color-500)] underline-offset-4 hover:text-white">
-              Politica de privacidad
-            </Link>
+        {/* Divider */}
+        <div className="border-t border-[#2d5566]"></div>
+
+        {/* Bottom section: Copyright and legal links */}
+        <div className="pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="font-ui text-xs text-[#6d6461] tracking-wide">
+            © 2026 Bitácora. Revista boliviana de pensamiento público.
           </p>
+          <div className="flex gap-6">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-ui text-xs text-[#6d6461] hover:text-[#b8afa8] transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-
-      <div className="h-7 w-full bg-gradient-to-r from-[var(--color-900)] via-[var(--color-800)] to-[var(--color-900)]" />
     </footer>
   );
 }
