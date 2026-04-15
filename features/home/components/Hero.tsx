@@ -47,8 +47,8 @@ const secondaryArticles: Article[] = [
 	{
 		slug: "debate-opinion-espacio-publico",
 		category: "Debate",
-		title: "El espacio publico como campo de disputa y escucha",
-		author: "Lucia Rivero",
+		title: "Un análisis de las campaña políticas en TikTok 2026: candidatos a alcaldes y gobernadores de los cuatro municipios más grandes de Bolivia bajo la lupa",
+		author: "Valeria Peredo Rodríguez",
 		date: "13 abril 2026",
 		dateISO: "2026-04-13",
 		image: {
