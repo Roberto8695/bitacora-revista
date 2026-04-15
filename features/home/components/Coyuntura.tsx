@@ -95,7 +95,7 @@ function CoyunturaCard({ article }: { article: CoyunturaArticle }) {
         </div>
 
         <div className="flex flex-1 flex-col p-5 md:p-6">
-          <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--accent-wine)]">
+          <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.18em]">
             {article.category}
           </p>
 
@@ -130,12 +130,12 @@ export default function Coyuntura() {
     >
       <div className="mx-auto w-full max-w-[1400px]">
         <header className="max-w-2xl">
-          <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent-wine)]">
+          <p className="editorial-kicker font-ui text-[11px] font-semibold uppercase tracking-[0.24em]">
             Coyuntura
           </p>
           <h2
             id="coyuntura-heading"
-            className="mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-[var(--foreground)] md:text-5xl"
+            className="editorial-section-title mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] md:text-5xl"
           >
             Coyuntura politica
           </h2>

@@ -111,12 +111,12 @@ export default function Hero() {
 		>
 			<div className="mx-auto w-full max-w-[1400px]">
 				<header className="mb-8 md:mb-10">
-					<p className="font-ui text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent-wine)]">
+					<p className="editorial-kicker font-ui text-[11px] font-semibold uppercase tracking-[0.24em]">
 						Edicion actual
 					</p>
 					<h2
 						id="hero-heading"
-						className="mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-[var(--foreground)] md:text-5xl lg:text-6xl"
+						className="editorial-section-title mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] md:text-5xl lg:text-6xl"
 					>
 						Politica, cultura y conflicto
 					</h2>

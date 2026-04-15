@@ -41,10 +41,10 @@ export default function Entrevista() {
   return (
     <section
       aria-labelledby="entrevista-heading"
-      className="border-t border-soft bg-[var(--surface)]/45 px-6 py-14 md:px-8 md:py-18 lg:px-12"
+      className="home-entrevista border-t border-soft bg-[var(--surface)]/45 px-6 py-14 md:px-8 md:py-18 lg:px-12"
     >
       <div className="mx-auto w-full max-w-[1400px]">
-        <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent-wine)]">
+        <p className="editorial-kicker font-ui text-[11px] font-semibold uppercase tracking-[0.24em]">
           {featuredInterview.section}
         </p>
 
@@ -65,7 +65,7 @@ export default function Entrevista() {
 
             <div className="flex flex-col justify-between p-6 md:p-8 lg:p-10">
               <header>
-                <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-wine)]">
+                <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.2em]">
                   {featuredInterview.subtitle}
                 </p>
                 <h2

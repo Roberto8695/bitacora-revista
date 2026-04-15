@@ -111,12 +111,12 @@ function CompactRow({ article, index }: { article: ResenaItem; index: number }) 
         href={"/articulos/" + article.slug}
         className="group grid grid-cols-1 gap-3 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-petroleum)]/50 md:py-5 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-5"
       >
-        <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-wine)] lg:pt-1">
+        <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.2em] lg:pt-1">
           {(index + 1).toString().padStart(2, "0")}
         </p>
 
         <div>
-          <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--accent-wine)] md:text-[11px]">
+          <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.18em] md:text-[11px]">
             {article.kind}
           </p>
           <h3 className="mt-2 max-w-[56ch] font-display text-2xl leading-[1.05] tracking-[-0.02em] text-[var(--foreground)] transition-colors duration-200 group-hover:text-[var(--accent-petroleum)] md:text-[1.9rem]">
@@ -149,12 +149,12 @@ export default function Resenas() {
     >
       <div className="mx-auto w-full max-w-[1400px]">
         <header className="max-w-3xl">
-          <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent-wine)]">
+          <p className="editorial-kicker font-ui text-[11px] font-semibold uppercase tracking-[0.24em]">
             Lecturas recomendadas
           </p>
           <h2
             id="resenas-heading"
-            className="mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-[var(--foreground)] md:text-5xl"
+            className="editorial-section-title mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] md:text-5xl"
           >
             Resenas y lecturas
           </h2>

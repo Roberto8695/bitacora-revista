@@ -124,7 +124,7 @@ function Card({ article }: { article: CulturaItem }) {
         </div>
 
         <div className="flex flex-1 flex-col p-5">
-          <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-wine)]">
+          <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.2em]">
             {article.category}
           </p>
           <h3 className="mt-3 font-display text-2xl leading-[1.03] tracking-[-0.02em] text-[var(--foreground)] transition-colors duration-200 group-hover:text-[var(--accent-petroleum)]">
@@ -150,12 +150,12 @@ export default function Cultura() {
     >
       <div className="mx-auto w-full max-w-[1400px]">
         <header className="max-w-3xl">
-          <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent-wine)]">
+          <p className="editorial-kicker font-ui text-[11px] font-semibold uppercase tracking-[0.24em]">
             Cultura y critica
           </p>
           <h2
             id="cultura-heading"
-            className="mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-[var(--foreground)] md:text-5xl"
+            className="editorial-section-title mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] md:text-5xl"
           >
             Cultura y critica
           </h2>
@@ -181,7 +181,7 @@ export default function Cultura() {
               </div>
 
               <div className="p-6 md:p-7">
-                <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-wine)]">
+                <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.2em]">
                   {featured.category}
                 </p>
                 <h3 className="mt-3 max-w-[20ch] font-display text-4xl leading-[0.95] tracking-[-0.03em] text-[var(--foreground)] transition-colors duration-200 group-hover:text-[var(--accent-petroleum)] md:text-5xl">

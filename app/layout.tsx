@@ -37,8 +37,8 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      data-theme="light"
-      style={{ colorScheme: "light" }}
+      data-theme="dark"
+      style={{ colorScheme: "dark" }}
       className={`${displayFont.variable} ${uiFont.variable} ${bodyFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">

@@ -7,7 +7,7 @@
   --foreground-muted: #5f5a54;
   --accent-wine: #7a2e2e;
   --accent-petroleum: #1f3a42;
-  --border-soft: #d8d1c7;
+  --border-soft: #c7bfb4;
   --nav-link: #5f5a54;
   --nav-link-hover: #1f3a42;
   --nav-link-icon: #7a746d;
@@ -21,7 +21,7 @@ html[data-theme="dark"] {
   --foreground-muted: #d1c8bd;
   --accent-wine: #c06a5c;
   --accent-petroleum: #7ba1a9;
-  --border-soft: #3a332c;
+  --border-soft: #595044;
   --nav-link: #d1c8bd;
   --nav-link-hover: #f7f3ec;
   --nav-link-icon: #9f9487;
@@ -95,6 +95,45 @@ time,
 
 .border-soft {
   border-color: var(--border-soft);
+}
+
+.editorial-section-title {
+  color: var(--accent-petroleum);
+}
+
+.editorial-kicker {
+  color: var(--accent-wine);
+}
+
+.editorial-category {
+  color: var(--accent-wine);
+}
+
+.editorial-link {
+  color: color-mix(in oklab, var(--foreground) 74%, var(--accent-petroleum) 26%);
+  text-decoration-color: color-mix(in oklab, var(--accent-petroleum) 50%, transparent);
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.editorial-link:hover {
+  color: var(--accent-petroleum);
+  text-decoration-color: var(--accent-petroleum);
+}
+
+.home-dossier {
+  background: color-mix(in oklab, var(--background) 92%, var(--accent-petroleum) 8%);
+}
+
+.home-entrevista {
+  background: color-mix(in oklab, var(--background) 90%, var(--accent-wine) 10%);
+}
+
+html[data-theme="dark"] .home-dossier {
+  background: color-mix(in oklab, var(--background) 86%, var(--accent-petroleum) 14%);
+}
+
+html[data-theme="dark"] .home-entrevista {
+  background: color-mix(in oklab, var(--background) 84%, var(--accent-wine) 16%);
 }
 
 #bita{

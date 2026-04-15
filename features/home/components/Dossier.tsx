@@ -57,14 +57,14 @@ function DossierMeta({
 }) {
   return (
     <div className="flex flex-wrap items-center gap-3 text-sm text-secondary">
-      <span className="font-ui font-semibold uppercase tracking-wide text-xs">
+      <span className="editorial-category font-ui font-semibold uppercase tracking-wide text-xs">
         {category}
       </span>
-      <span className="w-1 h-1 rounded-full bg-soft"></span>
+      <span className="h-1 w-1 rounded-full bg-[var(--accent-wine)]/55"></span>
       <time dateTime={dateISO} className="font-ui">
         {dateLabel}
       </time>
-      <span className="w-1 h-1 rounded-full bg-soft"></span>
+      <span className="h-1 w-1 rounded-full bg-[var(--accent-wine)]/55"></span>
       <span className="font-ui italic">{author}</span>
     </div>
   );
@@ -73,7 +73,7 @@ function DossierMeta({
 function DossierItem({ article }: { article: DossierArticle }) {
   return (
     <Link href={`/articulos/${article.slug}`}>
-      <article className="group py-6 border-b border-soft hover:opacity-70 transition-opacity duration-200 cursor-pointer">
+      <article className="group cursor-pointer border-b border-soft py-6 transition-colors duration-200 hover:border-[var(--accent-petroleum)]/45">
         <div className="space-y-2">
           <DossierMeta
             category={article.category}
@@ -97,18 +97,18 @@ export default function Dossier() {
   return (
     <section
       aria-labelledby="dossier-heading"
-      className="bg-page py-12 md:py-16"
+      className="home-dossier py-12 md:py-16"
     >
       <div className="mx-auto max-w-[1400px] px-4 md:px-6 lg:px-8 border-t border-soft pt-8">
         <header className="mb-8 md:mb-12">
           <div className="mb-4">
-            <p className="font-ui font-semibold uppercase tracking-widest text-xs text-secondary">
+            <p className="editorial-kicker font-ui text-xs font-semibold uppercase tracking-widest">
               Tema central
             </p>
           </div>
           <h2
             id="dossier-heading"
-            className="font-display text-5xl md:text-6xl leading-tight mb-4 max-w-3xl"
+            className="editorial-section-title mb-4 max-w-3xl font-display text-5xl leading-tight md:text-6xl"
           >
             Gobernanza en transición
           </h2>

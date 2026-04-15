@@ -87,7 +87,7 @@ function SecondaryPolicyItem({ article, isLast }: { article: PolicyArticle; isLa
         href={"/articulos/" + article.slug}
         className="group block py-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-petroleum)]/50"
       >
-        <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-wine)]">
+        <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.2em]">
           {article.category}
         </p>
         <h3 className="mt-2 font-display text-lg leading-[1.1] tracking-[-0.01em] text-[var(--foreground)] transition-colors duration-200 group-hover:text-[var(--accent-petroleum)] md:text-xl">
@@ -117,12 +117,12 @@ export default function Politica() {
     >
       <div className="mx-auto w-full max-w-[1400px] border-t border-soft pt-8 md:pt-10">
         <header className="max-w-3xl">
-          <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent-wine)]">
+          <p className="editorial-kicker font-ui text-[11px] font-semibold uppercase tracking-[0.24em]">
             Politicas publicas
           </p>
           <h2
             id="politica-heading"
-            className="mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-[var(--foreground)] md:text-5xl"
+            className="editorial-section-title mt-3 font-display text-4xl leading-[0.95] tracking-[-0.02em] md:text-5xl"
           >
             Politicas publicas
           </h2>
@@ -137,7 +137,7 @@ export default function Politica() {
               href={"/articulos/" + featuredPolicyArticle.slug}
               className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-petroleum)]/50"
             >
-              <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-wine)]">
+              <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.2em]">
                 {featuredPolicyArticle.category}
               </p>
               <h3 className="mt-3 font-display text-3xl leading-[1.02] tracking-[-0.02em] text-[var(--foreground)] transition-colors duration-200 group-hover:text-[var(--accent-petroleum)] md:text-4xl">

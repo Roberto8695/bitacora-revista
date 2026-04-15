@@ -9,12 +9,12 @@ export default function CtaEditorial() {
       <div className="mx-auto w-full max-w-[1400px] border border-soft bg-[var(--background)] p-6 md:p-8 lg:p-10">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
           <div>
-            <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent-wine)]">
+            <p className="editorial-kicker font-ui text-[11px] font-semibold uppercase tracking-[0.24em]">
               Cierre editorial
             </p>
             <h2
               id="cta-editorial-heading"
-              className="mt-3 max-w-[16ch] font-display text-4xl leading-[0.95] tracking-[-0.03em] text-[var(--foreground)] md:text-5xl"
+              className="editorial-section-title mt-3 max-w-[16ch] font-display text-4xl leading-[0.95] tracking-[-0.03em] md:text-5xl"
             >
               Recibe cada edicion y recorre nuestro archivo
             </h2>
@@ -26,7 +26,7 @@ export default function CtaEditorial() {
 
           <div className="grid grid-cols-1 gap-4">
             <article className="border border-soft bg-[var(--surface)]/35 p-5 md:p-6">
-              <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-wine)]">
+              <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.2em]">
                 Boletin
               </p>
               <h3 className="mt-2 font-display text-3xl leading-[0.98] tracking-[-0.02em] text-[var(--foreground)]">
@@ -44,7 +44,7 @@ export default function CtaEditorial() {
             </article>
 
             <article className="border border-soft bg-[var(--surface)]/35 p-5 md:p-6">
-              <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-wine)]">
+              <p className="editorial-category font-ui text-[10px] font-semibold uppercase tracking-[0.2em]">
                 Memoria editorial
               </p>
               <h3 className="mt-2 font-display text-3xl leading-[0.98] tracking-[-0.02em] text-[var(--foreground)]">
@@ -55,7 +55,7 @@ export default function CtaEditorial() {
               </p>
               <Link
                 href="/archivo"
-                className="font-ui mt-5 inline-flex items-center justify-center rounded-full border border-soft px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--foreground)] transition-colors duration-200 hover:border-[var(--accent-petroleum)] hover:text-[var(--accent-petroleum)]"
+                className="editorial-link font-ui mt-5 inline-flex items-center justify-center rounded-full border border-soft px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors duration-200 hover:border-[var(--accent-petroleum)]"
               >
                 Ir al archivo
               </Link>
