@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ShareButtons from "@/components/article/ShareButtons";
 
 type ArticlePageData = {
 	slug: string;
@@ -371,6 +372,8 @@ export default async function ArticlePage({
 						</p>
 					))}
 				</div>
+
+				<ShareButtons title={article.title} />
 
 				<footer className="mt-10 border-t border-soft pt-6">
 					<Link
